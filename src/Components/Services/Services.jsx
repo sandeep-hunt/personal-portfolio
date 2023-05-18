@@ -4,8 +4,10 @@ import HeartEmoji from "../../img/heartemoji.png";
 import Glasses from "../../img/glasses.png";
 import Humble from "../../img/humble.png";
 import Card from '../Card/Card';
+import {motion, spring} from 'framer-motion'
 
 const Services = () => {
+  const transition = {duration: 1, type: spring}
   return (
     <div className="services">
       <div className="awesome">
@@ -15,27 +17,39 @@ const Services = () => {
         <button className='button s-button'>Download CV</button>
       </div>
       <div className="cards">
-        <div className='card1'>
+        <motion.div
+        initial={{left: '26rem'}}
+        whileInView={{left: '24rem'}}
+        transition={transition}
+        className='card1'>
           <Card
           emoji = {HeartEmoji}
           heading = {'Design'}
           detail = {"Figma, Sketch, Photoshop, Adobe, Adobe xd"}
           />
-        </div>
-        <div className='card2'>
+        </motion.div>
+        <motion.div
+        initial={{left: '-2rem', top: '10rem'}}
+        whileInView={{left: '4rem'}}
+        transition={transition}
+        className='card2'>
           <Card
           emoji = {Glasses}
           heading = {'Developer'}
           detail = {"HTML, CSS, JavaScript, React"}
           />
-        </div>
-        <div className='card3'>
+        </motion.div>
+        <motion.div
+        initial={{left: '26rem', top: '19rem'}}
+        whileInView={{left: '22rem'}}
+        transition={transition}
+        className='card3'>
           <Card
           emoji = {Humble}
           heading = {'UI UX'}
           detail = {"Figma, Sketch, Photoshop, Adobe, Adobe xd"}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   )
