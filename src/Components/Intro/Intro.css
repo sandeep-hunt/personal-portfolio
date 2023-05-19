@@ -99,3 +99,21 @@
     top: 18rem;
     left: 0rem;
 }
+
+@media (max-width: 768px) {
+    .intro {
+        flex-direction: column;
+    }
+
+    .i-icons {
+        margin-top: 1rem;
+    }
+
+    .i-icons>* {
+        transform: scale(0.4);
+    }
+
+    .i-right {
+        margin-top: 5rem;
+    }
+}
